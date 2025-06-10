@@ -10,6 +10,7 @@ class CreateVendasTable extends Migration
     {
         Schema::create('vendas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('estabelecimento_id')->constrained()->onDelete('cascade');
             $table->foreignId('produto_id')->constrained()->onDelete('cascade');
             $table->integer('quantidade_vendida');
             $table->decimal('preco_unitario', 8, 2);

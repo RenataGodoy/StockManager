@@ -16,6 +16,9 @@ return new class extends Migration
             $table->string('nome');
             $table->string('email')->unique();
             $table->string('password');
+            $table->string('cnpj')->unique();
+            $table->string('nome_empresa');
+            $table->string('telefone');
             $table->timestamps();
         });
 

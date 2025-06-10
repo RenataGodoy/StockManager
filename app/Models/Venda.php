@@ -14,6 +14,7 @@ class Venda extends Model
         'quantidade_vendida',
         'preco_unitario',
         'valor_total',
+        'estabelecimento_id'
     ];
 
     // Relacionamento com o produto
@@ -21,4 +22,10 @@ class Venda extends Model
     {
         return $this->belongsTo(Produto::class);
     }
+
+    public function estabelecimento()
+    {
+        return $this->belongsTo(Estabelecimento::class);
+    }
+
 }

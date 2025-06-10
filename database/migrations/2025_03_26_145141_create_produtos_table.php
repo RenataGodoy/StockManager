@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('estabelecimento_id')->constrained()->onDelete('cascade');
             $table->string('nome');
             $table->text('descricao');
             $table->decimal('preco', 8, 2);  // Valor do produto
@@ -21,7 +22,6 @@ return new class extends Migration
             $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.

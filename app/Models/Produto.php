@@ -15,6 +15,7 @@ class Produto extends Model
         'descricao',
         'preco',
         'quantidade',
+        'estabelecimento_id',
         'status',
     ];
 
@@ -34,5 +35,11 @@ class Produto extends Model
         $this->quantidade -= $quantidadeVendida;
         $this->save();
     }
+
+    public function estabelecimento()
+    {
+        return $this->belongsTo(Estabelecimento::class);
+    }
+
 }
 
